@@ -16,31 +16,39 @@ class Homepage extends StatelessWidget {
       appBar: AppBar(
         title: Text("App In All"),
       ),
-      body: Center(
-        child: Container(
-          padding: const EdgeInsets.all (8),
-          width: 100,
-          height: 100,
-          clipBehavior: Clip.antiAlias,
-          alignment: Alignment.center ,
-          decoration: BoxDecoration(
-            color: Colors. red,
-            shape: BoxShape.circle,
-            gradient: LinearGradient(colors: [
-              Colors.purple,
-              Colors.orange,
-            ]),
-            ),
-          child: Text("I am a Box", 
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize:20,
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-          ),
+      body: Container(
+        // width: 300,
+        height: 300,
+        color: Colors.grey,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              padding: const EdgeInsets.all (8),
+              width: 100,
+              height: 100,
+              color: Colors.red,
+              alignment: Alignment.center,
+             ),
+             Container(
+              padding: const EdgeInsets.all (8),
+              width: 100,
+              height: 100,
+              color: Colors.yellow,
+              alignment: Alignment.center,
+
+              ),
+              Container(
+              padding: const EdgeInsets.all (8),
+              width: 100,
+              height: 100,
+              color: Colors.greenAccent,
+              alignment: Alignment.center,
+             ),
+          ],
         ),
-      )
+      ),
     );
   }
 }

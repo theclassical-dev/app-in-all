@@ -1,3 +1,4 @@
+import 'package:allapptest/pages/home_futurebuilder.dart';
 import 'package:allapptest/pages/home_page.dart';
 import 'package:allapptest/pages/login.dart';
 import 'package:allapptest/utils/constant.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Constants.prefs!.getBool("loggedIn")==true
-      ?Homepage()
+      ?HomepageFb()
       :LoginPage(),
       theme: ThemeData(
         primarySwatch: Colors.brown,

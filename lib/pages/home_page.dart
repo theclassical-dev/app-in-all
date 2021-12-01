@@ -1,4 +1,6 @@
 import 'package:allapptest/drawer.dart';
+import 'package:allapptest/pages/login.dart';
+import 'package:allapptest/utils/constant.dart';
 // import 'package:allapptest/name_card.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -45,7 +47,8 @@ class _HomepageState extends State<Homepage> {
           IconButton(
             icon: Icon(Icons.exit_to_app),
             onPressed: (){
-              Navigator.pop(context);
+              Constants.prefs!.setBool("loggedIn", false);
+              Navigator.pushReplacementNamed(context, LoginPage.routeName);
             },
             )
         ],

@@ -1,14 +1,13 @@
+import 'package:allapptest/con.dart';
 import 'package:allapptest/pages/home_futurebuilder.dart';
 import 'package:allapptest/pages/home_page.dart';
-import 'package:allapptest/pages/home_streambuilder.dart';
 import 'package:allapptest/pages/login.dart';
-import 'package:allapptest/utils/constant.dart';
+import 'package:allapptest/screens/Login/login.dart';
+import 'package:allapptest/screens/Signup/signup.dart';
+import 'package:allapptest/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  Constants.prefs = await SharedPreferences.getInstance();
+void main() {
   runApp(MyApp());
 }
 
@@ -16,17 +15,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Constants.prefs!.getBool("loggedIn")==true
-      ?HomepageSb()
-      :LoginPage(),
-      theme: ThemeData(
-        primarySwatch: Colors.brown,
-      ),
-      routes: {
-        LoginPage.routeName: (context) => LoginPage(),
-        Homepage.routeName: (context) => Homepage(),
-      },
-    );
-  }
+        debugShowCheckedModeBanner: false,
+        home: welcomeScreen(),
+        theme: ThemeData(
+         primaryColor: PmColor,
+         scaffoldBackgroundColor: Colors.white,
+        ),
+        routes: {
+          LoginPage.routeName: (context) => LoginPage(),
+          Homepage.routeName: (context) => Homepage(),
+          LoginScreen.routeName: (context) => LoginScreen(),
+          SignUpScreen.routeName: (context) => SignUpScreen(),
+
+          },
+        );
+  }   
 }

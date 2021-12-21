@@ -53,6 +53,7 @@ class _HomepageState extends State<Homepage> {
             )
         ],
       ),
+    
       body: data != null
           ? ListView.builder(
               itemCount: data.length,
@@ -60,12 +61,12 @@ class _HomepageState extends State<Homepage> {
                 return ListTile(
                   leading: Image.network(data[index]['url']),
                   title: Text(data[index]['title']),
-                  subtitle: Text("ID: ${data[index]['id']}"),
+                  trailing: Text("ID: ${data[index]['id']}"),
                 );
               },
             )
           : Center(
-              child: CircularProgressIndicator(),
+              child: Text("no data"),
             ),
       drawer: MyDrawer(),
       floatingActionButton: FloatingActionButton(
